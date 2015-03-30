@@ -121,14 +121,14 @@ def MazeGenerator(width,height):
             CellsChecked += 1
         else:
             break
-        print("Cell Stack: "+str(CellStack))
+        #print("Cell Stack: "+str(CellStack))
 
     # print(len(CellStack))
     #Convert Celstack to tuple and print results to file
     CellStack = [tuple(x) for x in CellStack]
-    fo = open(output_file, "w")
+    sys.stdout = open(output_file, 'w')
     for i in range(0,len(CellStack)):
-        print(', '.join([str(CellStack[i]), str(CellStack[i+1])]), file=fo)
-    fo.close()
+        print(', '.join([str(CellStack[i]), str(CellStack[i+1])]))
+    
 
 MazeGenerator(n, n)
